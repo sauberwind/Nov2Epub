@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nov2Epub", "..\..\Nov2Epub - コピー\Nov2Epub\Nov2Epub.csproj", "{21938E5F-BE23-4AEF-996E-5F7522726571}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nov2Epub", "Nov2Epub\Nov2Epub.csproj", "{21938E5F-BE23-4AEF-996E-5F7522726571}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

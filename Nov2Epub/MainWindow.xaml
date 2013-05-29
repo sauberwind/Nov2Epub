@@ -1,8 +1,41 @@
 ﻿<Window x:Class="Nov2Epub.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
-    </Grid>
+        Title="Nov2Epub" Height="415" Width="446" Closed="OnWindowClosed">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Margin" Value="10,0"/>
+        </Style>
+    </Window.Resources>
+    <StackPanel Orientation="Vertical" Margin="10,0">
+        <Label>題名</Label>
+        <TextBox x:Name="title"/>
+        <Label>著者</Label>
+        <TextBox x:Name="author"/>
+        <Label>小説ファイル(テキストファイルをドロップしてください)</Label>
+        <TextBox x:Name="novel" PreviewDragOver="OnPreviewDragOver" Drop="OnDrop"/>
+        <GroupBox Header="組み版情報">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Vertical">
+                    <Label>縦組み/横組み</Label>
+                    <RadioButton GroupName="Orientation" Margin="10,0,0,0">縦組</RadioButton>
+                    <RadioButton GroupName="Orientation" Margin="10,0,0,0" IsChecked="True">横組</RadioButton>
+                </StackPanel>
+                <StackPanel Orientation="Vertical">
+                    <Label>インデント</Label>
+                    <RadioButton GroupName="Indent" Margin="10,0,0,0">全角空白</RadioButton>
+                    <RadioButton GroupName="Indent" Margin="10,0,0,0" IsChecked="True">指定なし</RadioButton>
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="EpubCheck">
+            <StackPanel Orientation="Vertical">
+                <Label>java(java.exeをドロップしてください)</Label>
+                <TextBox x:Name="javaBox" PreviewDragOver="OnPreviewDragOver" Drop="OnDrop"></TextBox>
+                <Label>EpubCheck(epubcheck-X.X.X.jarをドロップしてください)</Label>
+                <TextBox x:Name="epubCheckBox" PreviewDragOver="OnPreviewDragOver" Drop="OnDrop"></TextBox>
+            </StackPanel>
+        </GroupBox>
+        <Button HorizontalAlignment="Center" Margin="91,20,91,0" FontSize="20" Click="GenerateEPUB" Content="EPUB3ファイルを生成する"/>
+    </StackPanel>
 </Window>
